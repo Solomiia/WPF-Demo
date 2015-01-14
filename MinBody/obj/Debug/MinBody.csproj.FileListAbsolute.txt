@@ -1,0 +1,16 @@
+E:\development\wpf\MinBody\MinBody\bin\Debug\MinBody.exe.config
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.csprojResolveAssemblyReference.cache
+E:\development\wpf\MinBody\MinBody\obj\Debug\Views\MainWindow.g.cs
+E:\development\wpf\MinBody\MinBody\obj\Debug\App.g.cs
+E:\development\wpf\MinBody\MinBody\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody_MarkupCompile.cache
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody_MarkupCompile.lref
+E:\development\wpf\MinBody\MinBody\bin\Debug\MinBody.exe
+E:\development\wpf\MinBody\MinBody\bin\Debug\MinBody.pdb
+E:\development\wpf\MinBody\MinBody\obj\Debug\Views\MainWindow.baml
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.g.resources
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.Properties.Resources.resources
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.csproj.GenerateResource.Cache
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.exe.licenses
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.exe
+E:\development\wpf\MinBody\MinBody\obj\Debug\MinBody.pdb
