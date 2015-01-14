@@ -6,48 +6,58 @@
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
         xmlns:viewModels="clr-namespace:MinBody.ViewModels"
+        xmlns:userControls="clr-namespace:MinBody.Views.UserControls"
         x:Class="MinBody.MainWindow"
         Title="MainWindow" Height="558" Width="1225">
     <Window.DataContext>
         <viewModels:MainWindowViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <DataTemplate x:Key="LayoutPanelTemplate">
+                        <dxdo:LayoutPanel Caption="{Binding DisplayName}">
+                            <dxdo:LayoutPanel.ContentTemplate>
+                                <DataTemplate>
+                                    <Border Background="AliceBlue">
+                                        <ContentPresenter Content="{Binding DisplayName}" />
+                                    </Border>
+                                </DataTemplate>
+                            </dxdo:LayoutPanel.ContentTemplate>
+                        </dxdo:LayoutPanel>
+                    </DataTemplate>
+                    <DataTemplate x:Key="DocumentPanelTemplate">
+                        <dxdo:DocumentPanel Caption="{Binding DisplayName}">
+                            <dxdo:LayoutPanel.ContentTemplate>
+                                <DataTemplate>
+                                    <Border Background="AliceBlue">
+                                        <userControls:DockPanelContent />
+                                    </Border>
+                                </DataTemplate>
+                            </dxdo:LayoutPanel.ContentTemplate>
+                        </dxdo:DocumentPanel>
+                    </DataTemplate>
+                  
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        <!--<Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="6*"></RowDefinition>
-        </Grid.RowDefinitions>-->
+        </Grid.RowDefinitions>
 
-        <dxdo:DockLayoutManager ItemsSource="{Binding Items}">
-            <dxdo:DockLayoutManager.Resources>
-                <DataTemplate x:Key="layoutPanelTemplate">
-                    <dxdo:LayoutPanel Caption="{Binding DisplayName}">
-                        <dxdo:LayoutPanel.ContentTemplate>
-                            <DataTemplate>
-                                <Border Background="AliceBlue">
-                                    <ContentPresenter Content="{Binding DisplayName}" />
-                                </Border>
-                            </DataTemplate>
-                        </dxdo:LayoutPanel.ContentTemplate>
-                    </dxdo:LayoutPanel>
-                </DataTemplate>
-                <DataTemplate x:Key="documentPanelTemplate">
-                    <dxdo:DocumentPanel Caption="{Binding DisplayName}">
-                        <dxdo:LayoutPanel.ContentTemplate>
-                            <DataTemplate>
-                                <Border Background="AntiqueWhite">
-                                    <ContentPresenter  Content="{Binding DisplayName}" />
-                                </Border>
-                            </DataTemplate>
-                        </dxdo:LayoutPanel.ContentTemplate>
-                    </dxdo:DocumentPanel>
-                </DataTemplate>
-            </dxdo:DockLayoutManager.Resources>
+        <dxdo:DockLayoutManager Grid.Row="1" ItemsSource="{Binding Items}">
             <dxdo:DockLayoutManager.ItemTemplateSelector>
-                <viewModels:DockItemTemplateSelector DocumentPanelTemplate="{StaticResource ResourceKey=documentPanelTemplate}" />
+                <viewModels:DockItemTemplateSelector LayoutPanelTemplate="{StaticResource LayoutPanelTemplate}" DocumentPanelTemplate="{StaticResource ResourceKey=DocumentPanelTemplate}" />
             </dxdo:DockLayoutManager.ItemTemplateSelector>
             <dxdo:LayoutGroup>
-<!--                <dxdo:LayoutGroup x:Name="panelHost" />-->
+
+                <!--<dxdo:LayoutGroup x:Name="panelHost" />-->
                 <dxdo:DocumentGroup x:Name="documentHost" />
+
             </dxdo:LayoutGroup>
         </dxdo:DockLayoutManager>
 
