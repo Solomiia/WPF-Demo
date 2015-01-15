@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using MinBody.Models;
+using MinBody.ViewModels.Base;
 
 namespace MinBody.ViewModels
 {
@@ -6,23 +9,30 @@ namespace MinBody.ViewModels
     {
         public MainWindowViewModel()
         {
-            _Items = new ObservableCollection<object>()
+            _items = new ObservableCollection<object>()
             {
                new ViewModel() {DisplayName = "Item1"},
                new ViewModel() {DisplayName = "Item2"},
-               new DocumentViewModel() {DisplayName = "Document1"},
-               new DocumentViewModel() {DisplayName = "Document2"}
+               new DocumentViewModel() {DisplayName = "Appointments", Image = @"E:\development\wpf\MinBody\MinBody\Content\appointment.png"},
+               new DocumentViewModel() {DisplayName = "Persons", Image = @"E:\development\wpf\MinBody\MinBody\Content\icon-person.png"}
             };
+       
         }
 
 
-        private ObservableCollection<object> _Items;
+        private ObservableCollection<object> _items;
+        private ObservableCollection<AppointmentViewModel> _appointments;
 
         public ObservableCollection<object> Items
         {
-            get { return _Items; }
-            private set { SetProperty(ref _Items, value, "Items"); }
+            get { return _items; }
+            private set { SetProperty(ref _items, value, "Items"); }
 
+        }
+
+        public ObservableCollection<AppointmentViewModel> Appointments {
+            get { return _appointments; }
+            private set { SetProperty(ref _appointments, value, "Appointments"); }
         }
     }
 }

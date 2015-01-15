@@ -1,5 +1,6 @@
 ﻿using System;
 using DevExpress.Xpf.Docking;
+using MinBody.ViewModels.Base;
 
 namespace MinBody.ViewModels
 {
@@ -11,6 +12,14 @@ namespace MinBody.ViewModels
         {
             get { return _displayName; }
             set { SetProperty(ref _displayName, value, "DisplayName"); }
+        }
+
+        private string _image;
+
+        public string Image
+        {
+            get { return _image; }
+            set { SetProperty(ref _image, value, "Image"); }
         }
         protected virtual string GetTargetName()
         {

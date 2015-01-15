@@ -5,23 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
              xmlns:userControls="clr-namespace:MinBody.Views.UserControls"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <dxdo:DockLayoutManager ItemsSource="{Binding Items}">
+        <dxdo:DockLayoutManager x:Name="DockLayoutManager" ItemsSource="{Binding Items}"  >
             <dxdo:DockLayoutManager.AutoHideGroups>
-                <dxdo:AutoHideGroup DockType="Left">
-                    <dxdo:LayoutPanel Caption="Left Panel" />
+                <dxdo:AutoHideGroup DockType="Left" AllowClose="False" ShowCloseButton="False" Closed="False" IsActive="True" AllowExpand="True"  >
+                    <dxdo:LayoutPanel x:Name="SettingsPanel" Caption="Left Panel"  MaxWidth="150" ItemWidth="1*"  ShowCloseButton="False" AllowSizing="False">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Loaded">
+                                <i:InvokeCommandAction Command="{Binding SettingsPanelDelegateCommand}" CommandParameter="2"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </dxdo:LayoutPanel>
                 </dxdo:AutoHideGroup>
             </dxdo:DockLayoutManager.AutoHideGroups>
-            <dxdo:LayoutGroup>
-                <dxdo:LayoutPanel AllowClose="False">
+            <dxdo:LayoutGroup  ItemWidth="7*" >
+                <dxdo:LayoutPanel>
                     <Border Background="Aqua">
                         <userControls:SchedulerUserControl />
                     </Border>
                 </dxdo:LayoutPanel>
             </dxdo:LayoutGroup>
+          
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding DockLayoutDelegateCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </dxdo:DockLayoutManager>
-
     </Grid>
 </UserControl>
