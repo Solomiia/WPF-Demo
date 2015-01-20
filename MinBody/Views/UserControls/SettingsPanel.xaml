@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="MinBody.Views.UserControls.SettingsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler"
+             xmlns:userControls="clr-namespace:MinBody.Views.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="225" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxe:DateNavigator Grid.Row="0" Name="DateNavigator"
+                           VerticalAlignment="Stretch"
+                           HighlightSpecialDates="True"
+                           ShowTodayButton="False"
+                           ShowWeekNumbers="True"
+                           WeekNumberRule="FirstDay" 
+                           IsMultiSelect="True" 
+                           CalendarView="Month"
+                           Height="225"
+                           Width="500">
+            <dxe:DateNavigator.CacheMode>
+                <BitmapCache/>
+            </dxe:DateNavigator.CacheMode>
+            <dxe:DateNavigator.StyleSettings>
+                <dxsch:SchedulerDateNavigatorStyleSettings 
+                    SchedulerControl="{Binding ElementName=ScheduleControl}"/>
+            </dxe:DateNavigator.StyleSettings>
+        </dxe:DateNavigator>
+        <userControls:BookAppointment Grid.Row="1" VerticalContentAlignment="Top"/>
+
+    </Grid>
+</UserControl>

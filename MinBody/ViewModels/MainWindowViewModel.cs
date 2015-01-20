@@ -21,7 +21,7 @@ namespace MinBody.ViewModels
 
 
         private ObservableCollection<object> _items;
-        private ObservableCollection<AppointmentViewModel> _appointments;
+//        private ObservableCollection<AppointmentViewModel> _appointments;
 
         public ObservableCollection<object> Items
         {
@@ -30,9 +30,9 @@ namespace MinBody.ViewModels
 
         }
 
-        public ObservableCollection<AppointmentViewModel> Appointments {
-            get { return _appointments; }
-            private set { SetProperty(ref _appointments, value, "Appointments"); }
-        }
+//        public ObservableCollection<AppointmentViewModel> Appointments {
+//            get { return _appointments; }
+//            private set { SetProperty(ref _appointments, value, "Appointments"); }
+//        }
     }
 }

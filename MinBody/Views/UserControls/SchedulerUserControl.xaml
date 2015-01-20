@@ -33,9 +33,9 @@
                         </dxsch:AppointmentStorage>
                     </dxsch:SchedulerStorage.AppointmentStorage>
                     <dxsch:SchedulerStorage.ResourceStorage>
-                        <dxsch:ResourceStorage DataSource="{Binding People}">
+                        <dxsch:ResourceStorage DataSource="{Binding Rooms}">
                             <dxsch:ResourceStorage.Mappings>
-                                <dxsch:ResourceMapping Id="Id" Caption="Name"/>
+                                <dxsch:ResourceMapping Id="Id" Caption="FullName"/>
                             </dxsch:ResourceStorage.Mappings>
                         </dxsch:ResourceStorage>
                     </dxsch:SchedulerStorage.ResourceStorage>

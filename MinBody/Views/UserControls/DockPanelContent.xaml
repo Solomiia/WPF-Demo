@@ -14,7 +14,8 @@
         <dxdo:DockLayoutManager x:Name="DockLayoutManager" ItemsSource="{Binding Items}"  >
             <dxdo:DockLayoutManager.AutoHideGroups>
                 <dxdo:AutoHideGroup DockType="Left" AllowClose="False" ShowCloseButton="False" Closed="False" IsActive="True" AllowExpand="True"  >
-                    <dxdo:LayoutPanel x:Name="SettingsPanel" Caption="Left Panel"  MaxWidth="150" ItemWidth="1*"  ShowCloseButton="False" AllowSizing="False">
+                    <dxdo:LayoutPanel x:Name="SettingsPanel" Caption="Left Panel" ItemWidth="500"  ShowCloseButton="False" AllowSizing="False">
+                        <userControls:SettingsPanel x:Name="UserControlSettingsPanel"/>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Loaded">
                                 <i:InvokeCommandAction Command="{Binding SettingsPanelDelegateCommand}" CommandParameter="2"/>
@@ -23,10 +24,10 @@
                     </dxdo:LayoutPanel>
                 </dxdo:AutoHideGroup>
             </dxdo:DockLayoutManager.AutoHideGroups>
-            <dxdo:LayoutGroup  ItemWidth="7*" >
+            <dxdo:LayoutGroup  >
                 <dxdo:LayoutPanel>
                     <Border Background="Aqua">
-                        <userControls:SchedulerUserControl />
+                        <userControls:SchedulerUserControl x:Name="SchedulerUserControl" />
                     </Border>
                 </dxdo:LayoutPanel>
             </dxdo:LayoutGroup>

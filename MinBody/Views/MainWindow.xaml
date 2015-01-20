@@ -15,7 +15,7 @@
     <dx:DXWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary>
+                <ResourceDictionary> 
                     <DataTemplate x:Key="LayoutPanelTemplate">
                         <dxdo:LayoutPanel Caption="{Binding DisplayName}" CaptionImage="">
                             <dxdo:LayoutPanel.ContentTemplate>

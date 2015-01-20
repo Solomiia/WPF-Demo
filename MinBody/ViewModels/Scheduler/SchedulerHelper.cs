@@ -1,37 +1,59 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using MinBody.Models;
 using MinBody.ViewModels.Base;
 
 namespace MinBody.ViewModels.Scheduler
 {
-    public class SchedulerHelper: ViewModelBase
+    public class SchedulerHelper : ViewModelBase
     {
         public SchedulerHelper()
         {
-       
-            _people = new ObservableCollection<PeopleViewModel>()
+
+            _rooms = new ObservableCollection<RoomSchedule>()
             {
-                new PeopleViewModel() { Id = 1, Name = "Alex"},
-                new PeopleViewModel() {Id = 2, Name = "Solomiia"},
-                new PeopleViewModel() {Id = 3, Name = "Vova"}
+                new RoomSchedule() { Room = new Room() { Id = 1, Name = "Room1"}, Therapists = new List<TherapistSchedule>()
+                {
+                   new TherapistSchedule() {Therapist = new Therapist()
+                   {
+                       Id = 1,
+                       Name="Alex"
+                   }}
+                }},
+                new RoomSchedule() { Room = new Room() { Id = 2, Name = "Room2"}, Therapists = new List<TherapistSchedule>()
+                {
+                   new TherapistSchedule() {Therapist = new Therapist()
+                   {
+                       Id = 2,
+                       Name="Solomiia"
+                   }}
+                }},
+                new RoomSchedule() { Room = new Room() { Id = 3, Name = "Room3"}, Therapists = new List<TherapistSchedule>()
+                {
+                   new TherapistSchedule() {Therapist = new Therapist()
+                   {
+                       Id = 3,
+                       Name="Vova"
+                   }}
+                }},
             };
         }
 
-        private ObservableCollection<AppointmentViewModel> _appointments;
+        private ObservableCollection<ScheduleAppointment> _appointments;
 
-        public ObservableCollection<AppointmentViewModel> Appointments
+        public ObservableCollection<ScheduleAppointment> Appointments
         {
             get { return _appointments; }
             private set { SetProperty(ref _appointments, value, "Appointments"); }
         }
 
-        private ObservableCollection<PeopleViewModel> _people;
+        private ObservableCollection<RoomSchedule> _rooms;
 
-        public ObservableCollection<PeopleViewModel> People
+        public ObservableCollection<RoomSchedule> Rooms
         {
-            get { return _people; }
-            private set { SetProperty(ref _people, value, "People"); }
+            get { return _rooms; }
+            private set { SetProperty(ref _rooms, value, "Rooms"); }
         }
-        
+
     }
 }
