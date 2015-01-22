@@ -13,8 +13,8 @@ namespace MinBody.ViewModels
             {
                new ViewModel() {DisplayName = "Item1"},
                new ViewModel() {DisplayName = "Item2"},
-               new DocumentViewModel() {DisplayName = "Appointments", Image = @"E:\development\wpf\MinBody\MinBody\Content\appointment.png"},
-               new DocumentViewModel() {DisplayName = "Persons", Image = @"E:\development\wpf\MinBody\MinBody\Content\icon-person.png"}
+               new DocumentViewModel() {DisplayName = "Appointments", Image = "pack://application:,,,/MinBody;component/Content/appointment.png"},
+               new DocumentViewModel() {DisplayName = "Persons", Image = "pack://application:,,,/MinBody;component/Content/icon-person.png"}
             };
        
         }
